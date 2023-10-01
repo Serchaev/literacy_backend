@@ -18,7 +18,7 @@ SERVER_PORT=3000
 Replace the values with your specific configuration.
 
 
-### Project start
+## Project start
 ```
 npm run prod
 ```
