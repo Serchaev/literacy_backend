@@ -6,11 +6,11 @@ const cors = require('cors');
 require('dotenv').config();
 
 // Подключение к базе данных PostgreSQL
-const user = process.env.user;
-const pass = process.env.pass;
-const address = process.env.address;
-const port = process.env.port;
-const database = process.env.database;
+const user = process.env.DB_USER;
+const pass = process.env.DB_PASS;
+const address = process.env.DB_ADDRESS;
+const port = process.env.DB_PORT;
+const database = process.env.DB_DATABASE;
 const sequelize = new Sequelize(`postgres://${user}:${pass}@${address}:${port}/${database}`);
 
 
@@ -63,7 +63,7 @@ app.post('/api/v1/finishTest', async (req, res) => {
 });
 
 // Запуск сервера
-const PORT = process.env.serverPort || 3000;
+const PORT = process.env.SERVER_PORT || 3000;
 app.listen(PORT, () => {
 	console.log(`Сервер запущен на порту ${PORT}`);
 });
